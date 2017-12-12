@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {},
+  "properties": {
+    "cookies": {
+      "items": {
+        "description": "A JSON object representing the cookie.",
+        "properties": {
+          "name": {
+              "description": "the name of the cookie",
+              "type": "string"
+          },
+          "value": {
+            "description": "the value of the cookie",
+            "type": "string"
+          }
+        }
+      },
+      "type": "array"
+    },
+    "do_reflect": {
+      "default": true,
+      "description": "Specifies whether reflection context checking should be performed.",
+      "type": "boolean"
+    },
+    "do_xss": {
+      "default": true,
+      "description": "Specifies whether XSS active scanning should be performed.",
+      "type": "boolean"
+    },
+    "headers": {
+      "items": {
+        "description": "A JSON object representing the header.",
+        "properties": {
+          "name": {
+              "description": "the name of the header",
+              "type": "string"
+          },
+          "value": {
+            "description": "the value of the header",
+            "type": "string"
+          }
+        }
+      },
+      "type": "array"
+    },
+    "json_version": {
+      "default": 1,
+      "description": "The version of input JSON for the tool",
+      "type": "number"
+    },
+    "request_body": {
+      "description": "For POST requests, a form-encoded string to serve as the request body.",
+      "type": "string"
+    },
+    "request_type": {
+      "default": "GET",
+      "description": "The type of HTTP request to make.",
+      "enum": [
+        "GET",
+        "POST"
+      ],
+      "type": "string"
+    },
+    "request_url": {
+      "description": "The URL to test",
+      "type": "string"
+    }
+  },
+  "required": [
+    "request_url"
+  ],
+  "type": "object"
+}

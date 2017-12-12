@@ -1,0 +1,202 @@
+{
+  "results": {
+    "reflection_check": {
+      "params_reflected": [
+        {
+          "delivery": "url",
+          "name": "tagName",
+          "value": "foo",
+          "reflect_trigger": "phfamcbwi",
+          "reflect_contexts": [
+            "nodename"
+          ]
+        },
+        {
+          "delivery": "url",
+          "name": "attributeName",
+          "value": "foo",
+          "reflect_trigger": "edopnalrg",
+          "reflect_contexts": [
+            "attributename"
+          ]
+        },
+        {
+          "delivery": "url",
+          "name": "singleQuotedAttributeValue",
+          "value": "foo",
+          "reflect_trigger": "ouxmbifgq",
+          "reflect_contexts": [
+            "attributevalue"
+          ]
+        },
+        {
+          "delivery": "url",
+          "name": "doubleQuotedAttributeValue",
+          "value": "foo",
+          "reflect_trigger": "snwxltuda",
+          "reflect_contexts": [
+            "attributevalue"
+          ]
+        },
+        {
+          "delivery": "url",
+          "name": "unquotedAttributeValue",
+          "value": "foo",
+          "reflect_trigger": "pezvfsrim",
+          "reflect_contexts": [
+            "attributevalue"
+          ]
+        },
+        {
+          "delivery": "url",
+          "name": "htmlComment",
+          "value": "foo",
+          "reflect_trigger": "xbkyzlyta",
+          "reflect_contexts": [
+            "comment"
+          ]
+        },
+        {
+          "delivery": "url",
+          "name": "styleTag",
+          "value": "foo",
+          "reflect_trigger": "gqiwykmvt",
+          "reflect_contexts": [
+            "text",
+            "style"
+          ]
+        },
+        {
+          "delivery": "url",
+          "name": "styleAttribute",
+          "value": "foo",
+          "reflect_trigger": "tninzejay",
+          "reflect_contexts": [
+            "attributevalue",
+            "styleattrib"
+          ]
+        },
+        {
+          "delivery": "url",
+          "name": "idAttribute",
+          "value": "foo",
+          "reflect_trigger": "lydbmgnlj",
+          "reflect_contexts": [
+            "attributevalue",
+            "idattrib"
+          ]
+        },
+        {
+          "delivery": "url",
+          "name": "classAttribute",
+          "value": "foo",
+          "reflect_trigger": "blwkaxnzm",
+          "reflect_contexts": [
+            "attributevalue",
+            "classattrib"
+          ]
+        },
+        {
+          "delivery": "url",
+          "name": "jsSingleQuotedString",
+          "value": "foo",
+          "reflect_trigger": "gjennpfok",
+          "reflect_contexts": [
+            "text",
+            "jsnode",
+            "jssinglequote"
+          ]
+        },
+        {
+          "delivery": "url",
+          "name": "jsDoubleQuotedString",
+          "value": "foo",
+          "reflect_trigger": "etpigmrxs",
+          "reflect_contexts": [
+            "text",
+            "jsnode",
+            "jsdoublequote"
+          ]
+        },
+        {
+          "delivery": "url",
+          "name": "jsSingleLineComment",
+          "value": "foo",
+          "reflect_trigger": "pkryyclyi",
+          "reflect_contexts": [
+            "text",
+            "jsnode"
+          ]
+        },
+        {
+          "delivery": "url",
+          "name": "jsMultiLineComment",
+          "value": "foo",
+          "reflect_trigger": "fsrvoekxn",
+          "reflect_contexts": [
+            "text",
+            "jsnode"
+          ]
+        },
+        {
+          "delivery": "url",
+          "name": "js",
+          "value": "foo",
+          "reflect_trigger": "yhwkhlsis",
+          "reflect_contexts": [
+            "text",
+            "jsnode",
+            "js_error"
+          ]
+        }
+      ],
+      "params_other": [
+        {
+          "delivery": "url",
+          "name": "html",
+          "value": "foo",
+          "reflect_trigger": "ewyybcixn"
+        }
+      ]
+    },
+    "xss_scan": [
+      {
+        "certainty": "CERTAIN",
+        "message": "Indicated via alert: \"844058382\"",
+        "parameter": "tagName",
+        "deliver": "url",
+        "attack": "script>alert(844058382)//"
+      },
+      {
+        "certainty": "CERTAIN",
+        "message": "Indicated via alert: \"940211179\"",
+        "parameter": "tagName",
+        "deliver": "url",
+        "attack": "b onmouseover=alert(940211179) "
+      },
+      {
+        "certainty": "CERTAIN",
+        "message": "Indicated via alert: \"261749378\"",
+        "parameter": "htmlComment",
+        "deliver": "url",
+        "attack": "--><b onmouseover=alert(261749378)>"
+      },
+      {
+        "certainty": "CERTAIN",
+        "message": "Indicated via alert: \"261749378\"",
+        "parameter": "htmlComment",
+        "deliver": "url",
+        "attack": "--><b onmouseover=alert(261749378)>"
+      },
+      {
+        "certainty": "CERTAIN",
+        "message": "Indicated via alert: \"261749378\"",
+        "parameter": "htmlComment",
+        "deliver": "url",
+        "attack": "--><b onmouseover=alert(261749378)>"
+      }
+    ]
+  },
+  "request_url_root": "http://127.0.0.1/demo-xss-site.php",
+  "request_type": "GET"
+}

@@ -1,0 +1,202 @@
+{
+  "results": {
+    "reflection_check": {
+      "params_reflected": [
+        {
+          "delivery": "body",
+          "name": "tagName",
+          "value": "foo",
+          "reflect_trigger": "oqhlcnzma",
+          "reflect_contexts": [
+            "nodename"
+          ]
+        },
+        {
+          "delivery": "body",
+          "name": "attributeName",
+          "value": "foo",
+          "reflect_trigger": "uiykifjxq",
+          "reflect_contexts": [
+            "attributename"
+          ]
+        },
+        {
+          "delivery": "body",
+          "name": "singleQuotedAttributeValue",
+          "value": "foo",
+          "reflect_trigger": "wicfdlilu",
+          "reflect_contexts": [
+            "attributevalue"
+          ]
+        },
+        {
+          "delivery": "body",
+          "name": "doubleQuotedAttributeValue",
+          "value": "foo",
+          "reflect_trigger": "rizkogjmi",
+          "reflect_contexts": [
+            "attributevalue"
+          ]
+        },
+        {
+          "delivery": "body",
+          "name": "unquotedAttributeValue",
+          "value": "foo",
+          "reflect_trigger": "elsmxzjvb",
+          "reflect_contexts": [
+            "attributevalue"
+          ]
+        },
+        {
+          "delivery": "body",
+          "name": "htmlComment",
+          "value": "foo",
+          "reflect_trigger": "jaelkafuw",
+          "reflect_contexts": [
+            "comment"
+          ]
+        },
+        {
+          "delivery": "body",
+          "name": "styleTag",
+          "value": "foo",
+          "reflect_trigger": "taraqilzq",
+          "reflect_contexts": [
+            "text",
+            "style"
+          ]
+        },
+        {
+          "delivery": "body",
+          "name": "styleAttribute",
+          "value": "foo",
+          "reflect_trigger": "xsvgaaznn",
+          "reflect_contexts": [
+            "attributevalue",
+            "styleattrib"
+          ]
+        },
+        {
+          "delivery": "body",
+          "name": "idAttribute",
+          "value": "foo",
+          "reflect_trigger": "wxewpdbht",
+          "reflect_contexts": [
+            "attributevalue",
+            "idattrib"
+          ]
+        },
+        {
+          "delivery": "body",
+          "name": "classAttribute",
+          "value": "foo",
+          "reflect_trigger": "wvkgdcyjh",
+          "reflect_contexts": [
+            "attributevalue",
+            "classattrib"
+          ]
+        },
+        {
+          "delivery": "body",
+          "name": "jsSingleQuotedString",
+          "value": "foo",
+          "reflect_trigger": "fxujvlawm",
+          "reflect_contexts": [
+            "text",
+            "jsnode",
+            "jssinglequote"
+          ]
+        },
+        {
+          "delivery": "body",
+          "name": "jsDoubleQuotedString",
+          "value": "foo",
+          "reflect_trigger": "iytjlcgqf",
+          "reflect_contexts": [
+            "text",
+            "jsnode",
+            "jsdoublequote"
+          ]
+        },
+        {
+          "delivery": "body",
+          "name": "jsSingleLineComment",
+          "value": "foo",
+          "reflect_trigger": "gmjkqtgsc",
+          "reflect_contexts": [
+            "text",
+            "jsnode"
+          ]
+        },
+        {
+          "delivery": "body",
+          "name": "jsMultiLineComment",
+          "value": "foo",
+          "reflect_trigger": "fugfwkeko",
+          "reflect_contexts": [
+            "text",
+            "jsnode"
+          ]
+        },
+        {
+          "delivery": "body",
+          "name": "js",
+          "value": "foo",
+          "reflect_trigger": "sxfwjhtan",
+          "reflect_contexts": [
+            "text",
+            "jsnode",
+            "js_error"
+          ]
+        }
+      ],
+      "params_other": [
+        {
+          "delivery": "body",
+          "name": "html",
+          "value": "foo",
+          "reflect_trigger": "ftnenanyp"
+        }
+      ]
+    },
+    "xss_scan": [
+      {
+        "certainty": "CERTAIN",
+        "message": "Indicated via alert: \"935666088\"",
+        "parameter": "tagName",
+        "deliver": "body",
+        "attack": "script>alert(935666088)//"
+      },
+      {
+        "certainty": "CERTAIN",
+        "message": "Indicated via alert: \"140602319\"",
+        "parameter": "tagName",
+        "deliver": "body",
+        "attack": "b onmouseover=alert(140602319) "
+      },
+      {
+        "certainty": "CERTAIN",
+        "message": "Indicated via alert: \"169764997\"",
+        "parameter": "htmlComment",
+        "deliver": "body",
+        "attack": "--><b onmouseover=alert(169764997)>"
+      },
+      {
+        "certainty": "CERTAIN",
+        "message": "Indicated via alert: \"169764997\"",
+        "parameter": "htmlComment",
+        "deliver": "body",
+        "attack": "--><b onmouseover=alert(169764997)>"
+      },
+      {
+        "certainty": "CERTAIN",
+        "message": "Indicated via alert: \"169764997\"",
+        "parameter": "htmlComment",
+        "deliver": "body",
+        "attack": "--><b onmouseover=alert(169764997)>"
+      }
+    ]
+  },
+  "request_url_root": "http://127.0.0.1/demo-xss-site.php",
+  "request_type": "POST"
+}

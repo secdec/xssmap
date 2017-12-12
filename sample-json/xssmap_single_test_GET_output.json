@@ -1,0 +1,36 @@
+{
+  "request_type": "GET",
+  "request_url_root": "http://127.0.0.1/demo-xss-site.php",
+  "results": {
+    "xss_scan": [
+      {
+        "attack": "--><script>alert(484777424)</script><!--",
+        "certainty": "CERTAIN",
+        "message": "Indicated via alert: \"484777424\"",
+        "deliver": "url",
+        "parameter": "htmlComment"
+      },
+      {
+        "attack": "--><b onmouseover=alert(303035265) >text</b><!--",
+        "certainty": "CERTAIN",
+        "message": "Indicated via alert: \"303035265\"",
+        "deliver": "url",
+        "parameter": "htmlComment"
+      }
+    ],
+    "reflection_check": {
+      "params_other": [],
+      "params_reflected": [
+        {
+          "delivery": "url",
+          "value": "foo",
+          "reflect_trigger": "qubutmrue",
+          "reflect_contexts": [
+            "comment"
+          ],
+          "name": "htmlComment"
+        }
+      ]
+    }
+  }
+}

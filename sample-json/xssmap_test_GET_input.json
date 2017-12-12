@@ -1,0 +1,9 @@
+{
+    "json_version": 1.00,
+    "request_type": "GET",
+    "request_url": "http://127.0.0.1/demo-xss-site.php?tagName=foo&attributeName=foo&singleQuotedAttributeValue=foo&doubleQuotedAttributeValue=foo&unquotedAttributeValue=foo&html=foo&htmlComment=foo&styleTag=foo&styleAttribute=foo&idAttribute=foo&classAttribute=foo&jsSingleQuotedString=foo&jsDoubleQuotedString=foo&jsSingleLineComment=foo&jsMultiLineComment=foo&js=foo",
+    "do_reflect": true,
+    "do_xss": true,
+    "headers": [],
+    "cookies": []
+}

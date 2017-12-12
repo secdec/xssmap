@@ -1,0 +1,116 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {},
+  "properties": {
+    "request_type": {
+      "description": "The type of HTTP request that was made.",
+      "enum": [
+        "GET",
+        "POST"
+      ],
+      "type": "string"
+    },
+    "request_url_root": {
+      "description": "The URL against which scanning was performed, given without parameters.",
+      "type": "string"
+    },
+    "results": {
+      "properties": {
+        "reflection_check": {
+          "properties": {
+            "params_other": {
+              "items": {
+                "description": "Other parameters that were part of the request but not necessarily reflected",
+                "properties": {
+                  "delivery": {
+                    "description": "The part of the HTTP request where the parameter was originally located",
+                    "type": "string"
+                  },
+                  "name": {
+                    "description": "The name of the parameter reflected",
+                    "type": "string"
+                  },
+                  "value": {
+                    "description": "The original value of the parameter",
+                    "type": "string"
+                  },
+                  "reflect_trigger": {
+                    "description": "The variation value used to detect the reflection",
+                    "type": "string"
+                  }
+                }
+              },
+              "type": "array"
+            },
+            "params_reflected": {
+              "items": {
+                "properties": {
+                  "delivery": {
+                    "description": "The part of the HTTP request where the parameter was originally located",
+                    "type": "string"
+                  },
+                  "name": {
+                    "description": "The name of the parameter reflected",
+                    "type": "string"
+                  },
+                  "reflect_contexts": {
+                    "items": {
+                      "description": "The contexts in which the paramter is reflected",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "reflect_trigger": {
+                    "description": "The variation value used to detect the reflection",
+                    "type": "string"
+                  },
+                  "value": {
+                    "description": "The original value of the parameter",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "xss_scan": {
+          "items": {
+            "properties": {
+              "attack": {
+                "description": "The attack string used",
+                "type": "string"
+              },
+              "certainty": {
+                "description": "How certain the tool is that the attack was successful",
+                "type": "string"
+              },
+              "deliver": {
+                "description": "The part of the HTTP request where the parameter was reflected",
+                "type": "string"
+              },
+              "message": {
+                "description": "How the attack was determined to be successful",
+                "type": "string"
+              },
+              "parameter": {
+                "description": "The parameter used in the attack",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "request_type",
+    "request_url_root"
+  ],
+  "type": "object"
+}
