@@ -284,6 +284,7 @@ class XssMap(object):
             this_param = {}
             this_param['name'] = param['name']
             this_param['value'] = param['value']
+            this_param['delivery'] = param['delivery']
             this_param['reflect_contexts'] = ['general']  # Implemented as wildcard context
             these_scan_parameters.params_reflected.append(this_param)
 
