@@ -109,6 +109,7 @@ class XssScanner(object):
                 u = u + attack
             else:
                 u = u + param_to_add['name'] + '=' + param_to_add['value']
+            u += '&'
 
         # If we ended up with trailing ampersand on URL, remove
         if u[-1] == '&':
@@ -159,6 +160,7 @@ class XssScanner(object):
                 attack_url += attack
             else:
                 attack_url += param['name'] + '=' + param['value']
+            attack_url += '&'
 
         # If we ended up with trailing ampersand on URL, remove
         if attack_url[-1] == '&':
@@ -170,6 +172,7 @@ class XssScanner(object):
                 attack_body += attack
             else:
                 attack_body += param['name'] + '=' + param['value']
+            attack_body += '&'
 
         # If we ended up with trailing ampersand in body, remove
         if attack_body and attack_body[-1] == '&':
