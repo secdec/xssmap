@@ -113,7 +113,10 @@ class PageRenderAPI(object):
 
         output = {}
 
-        page_html = base64.b64decode(rendered_page_output['html']).decode(u)
+        try:
+          page_html = base64.b64decode(rendered_page_output['html']).decode(u)
+        except UnicodeDecodeError as e:
+          page_html = base64.decodebytes(bytes(rendered_page_output['html'], u))
         output['page_html'] = page_html
 
         page_errors = base64.b64decode(rendered_page_output['errors']).decode(u)
